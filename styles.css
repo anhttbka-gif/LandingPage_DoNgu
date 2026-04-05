@@ -201,7 +201,7 @@ a {
     border-right: 1px solid #ccc;
 }
 
-.add-to-cart {
+.add-to-cart, .submit-order-button, .show-form-button {
     background: #f4c2c5;
     color: #d15c69;
     border: none;
@@ -212,11 +212,77 @@ a {
     cursor: pointer;
     transition: 0.3s;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    width: 100%;
 }
 
-.add-to-cart:hover {
+.add-to-cart:hover, .submit-order-button:hover, .show-form-button:hover {
     background: #eba5ab;
     color: white;
+}
+
+/* ORDER FORM STYLES */
+.total-price-calc {
+    margin-left: 20px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.order-form-container {
+    background: #fdfdfd;
+    border: 1px solid #f2cfd3;
+    padding: 20px;
+    border-radius: 6px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(209, 92, 105, 0.05); /* Slight pink shadow */
+}
+
+.form-title {
+    font-size: 16px;
+    color: #d15c69;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: 1px dashed #eba5ab;
+    padding-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: #eba5ab;
+    box-shadow: 0 0 5px rgba(235, 165, 171, 0.4);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.submit-order-button {
+    background: #d15c69;
+    color: white;
+    font-size: 18px;
+    padding: 15px 20px;
+    margin-top: 10px;
+}
+
+.submit-order-button:hover {
+    background: #bd4a56;
 }
 
 .offer-box {
@@ -367,3 +433,31 @@ a {
         margin: 0 auto 10px;
     }
 }
+
+/* FLOATING CONTACT BUTTONS */
+.floating-contact {
+    position: fixed;
+    right: 20px;
+    bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 999;
+}
+.f-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: transform 0.2s;
+}
+.f-btn:hover {
+    transform: scale(1.1);
+}
+.call-btn { background-color: #27ae60; }
+.zalo-btn { background-color: #0068ff; font-size: 13px; }
