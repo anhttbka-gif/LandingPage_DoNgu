@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Set Đồ Ngủ Cosplay Cô Dâu - LYS Lingerie</title>
+    <title>Set Đồ Ngủ Cosplay Cô Dâu - Umee Bra</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -12,7 +12,7 @@
     <!-- TOP NAV -->
     <nav class="top-nav">
         <div class="nav-container">
-            <div class="logo">LYS LINGERIE</div>
+            <div class="logo">UMEE BRA</div>
             <div class="search-bar">Tìm kiếm...</div>
             <div class="cart-icon">Giỏ hàng 🛒</div>
         </div>
@@ -41,8 +41,8 @@
             <h1 class="prod-title">Thiêu Đốt Mọi Ánh Nhìn - Set Đồ Ngủ Cosplay Cô Dâu Quyến Rũ (Kèm Khăn Voan)</h1>
             <div class="price">
                 <span class="old-price">500.000₫</span>
-                <span class="current-price">350.000₫</span>
-                <span class="sale-badge">-30%</span>
+                <span class="current-price">150.000₫</span>
+                <span class="sale-badge">-70%</span>
             </div>
             
             <div class="details-section">
@@ -61,6 +61,13 @@
                 </ul>
             </div>
             
+            <div class="flash-sale-timer" style="background: #fff3f5; padding: 10px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #ffd8de;">
+                <div style="font-weight: bold; color: #d15c69; display: flex; justify-content: space-between; align-items: center;">
+                    <span>🔥 Số lượng giới hạn: còn duy nhất 5 chiếc!</span>
+                    <span id="countdownTimer" style="background: #d15c69; color: white; padding: 4px 8px; border-radius: 4px; font-size: 14px;">01:00:00</span>
+                </div>
+            </div>
+            
             <div class="actions" style="margin-bottom: 20px;">
                 <div class="qty-selector">
                     <button class="qty-btn" onclick="decreaseQty()">-</button>
@@ -68,11 +75,11 @@
                     <button class="qty-btn" onclick="increaseQty()">+</button>
                 </div>
                 <div class="total-price-calc">
-                    Tạm tính: <span id="tempTotal" style="color: #d15c69; font-weight: bold; font-size: 20px;">350.000₫</span>
+                    Tạm tính: <span id="tempTotal" style="color: #d15c69; font-weight: bold; font-size: 20px;">150.000₫</span>
                 </div>
             </div>
             
-            <button id="showFormBtn" class="add-to-cart show-form-button">ĐẶT HÀNG NGAY (GIẢM 30%)</button>
+            <button id="showFormBtn" class="add-to-cart show-form-button">ĐẶT HÀNG NGAY (GIẢM 70%)</button>
 
             <div class="order-form-container" id="orderFormContainer" style="display: none; margin-top: 15px;">
                 <h3 class="form-title">ĐIỀN THÔNG TIN NHẬN HÀNG ƯU ĐÃI</h3>
@@ -181,7 +188,7 @@
     <!-- FOOTER Pinned Pink Style -->
     <footer class="footer">
         <div class="f-col">
-            <h3>VỀ LYS LINGERIE</h3>
+            <h3>VỀ UMEE BRA</h3>
             <p>Tự hào mang đến sự tự tin và nét quyến rũ chết người cho mọi người phụ nữ. 100% che tên sản phẩm khi giao hàng!</p>
         </div>
         <div class="f-col">
@@ -191,8 +198,9 @@
         </div>
         <div class="f-col">
             <h3>LIÊN HỆ CHÚNG TÔI</h3>
-            <p>Hotline (24/7): 0909.123.456</p>
-            <p>Email: hotro@lyslingerie.vn</p>
+            <p>Hotline: 0868.319.102</p>
+            <p>Email: donguella@gmail.com</p>
+            <p>Shopee: <a href="https://shopee.vn/b01umeebra" style="color: white; text-decoration: underline;" target="_blank">b01umeebra</a></p>
         </div>
     </footer>
     <script>
@@ -292,7 +300,7 @@
             }
         });
 
-        const UnitPrice = 350000;
+        const UnitPrice = 150000;
         const qtyInput = document.getElementById('orderQty');
         const tempTotal = document.getElementById('tempTotal');
 
@@ -315,11 +323,31 @@
                 updatePrice();
             }
         }
+
+        // Timer Countdown
+        let timeInSeconds = 3600; // 1 hour
+        const timerElement = document.getElementById('countdownTimer');
+        
+        setInterval(function() {
+            if(timeInSeconds > 0) {
+                timeInSeconds--;
+                let hours = Math.floor(timeInSeconds / 3600);
+                let minutes = Math.floor((timeInSeconds % 3600) / 60);
+                let seconds = timeInSeconds % 60;
+                
+                let displayTime = 
+                    (hours < 10 ? "0" + hours : hours) + ":" + 
+                    (minutes < 10 ? "0" + minutes : minutes) + ":" + 
+                    (seconds < 10 ? "0" + seconds : seconds);
+                    
+                if(timerElement) timerElement.textContent = displayTime;
+            }
+        }, 1000);
     </script>
     
     <!-- FLOATING CONTACT BUTTONS -->
     <div class="floating-contact">
-        <a href="tel:0909123456" class="f-btn call-btn" title="Gọi điện">
+        <a href="tel:0868319102" class="f-btn call-btn" title="Gọi điện">
             <i class="fas fa-phone-alt"></i>
         </a>
         <a href="https://zalo.me/g/flpgvi146" class="f-btn zalo-btn" title="Zalo" target="_blank">
