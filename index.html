@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+
     <!-- TOP NAV -->
     <nav class="top-nav">
         <div class="nav-container">
@@ -16,6 +17,120 @@
             <div class="search-bar">Tìm kiếm...</div>
             <div class="cart-icon">Giỏ hàng 🛒</div>
         </div>
+
+    <!-- SURVEY BANNER -->
+    <div id="surveyBanner" class="survey-banner">
+        <div class="survey-banner-bar" id="surveyToggleBtn" onclick="toggleSurvey()" role="button" aria-expanded="false">
+            <div class="survey-bar-left">
+                <span class="survey-gift-icon">🎁</span>
+                <div class="survey-bar-text">
+                    <strong>ĐIỀN KHẢO SÁT – NHẬN NGAY 100K</strong>
+                    <span>Chỉ mất 1 phút · Quà tặng có hạn!</span>
+                </div>
+            </div>
+            <div class="survey-bar-right">
+                <span class="survey-bar-cta" id="surveyCtaText">Làm khảo sát ngay →</span>
+                <span class="survey-chevron" id="surveyChevron">▼</span>
+            </div>
+        </div>
+
+        <!-- SURVEY FORM BODY -->
+        <div class="survey-body" id="surveyBody">
+            <div class="survey-form-wrap">
+                <div class="survey-header">
+                    <h2 class="survey-title">📋 Khảo Sát Khách Hàng <span class="gift-tag">🎁 Tặng 100.000đ</span></h2>
+                    <p class="survey-desc">Umee Bra gửi tặng voucher <strong>100K</strong> cho bạn khi hoàn thành khảo sát này. Chúng mình sẽ liên hệ qua Zalo để gửi code nhé! 🌸</p>
+                </div>
+
+                <form id="surveyForm" class="survey-form">
+
+                    <!-- Q1: Tên -->
+                    <div class="sq-block">
+                        <div class="sq-num">01</div>
+                        <div class="sq-content">
+                            <label class="sq-label" for="sq_name">Tên bạn là gì ạ?</label>
+                            <p class="sq-hint">Họ sẽ trả lời tên để bạn xưng hô thân thiện · Ví dụ: Linh, Hana, Bích…</p>
+                            <input type="text" id="sq_name" name="Tên" class="sq-input" placeholder="Nhập tên của bạn..." required>
+                        </div>
+                    </div>
+
+                    <!-- Q2: SĐT/Zalo -->
+                    <div class="sq-block">
+                        <div class="sq-num">02</div>
+                        <div class="sq-content">
+                            <label class="sq-label" for="sq_phone">Số điện thoại hoặc Zalo của bạn là gì ạ?</label>
+                            <p class="sq-hint">Để bạn liên hệ tư vấn và gửi catalogue · Thông tin bảo mật tuyệt đối 🔒</p>
+                            <input type="text" id="sq_phone" name="SĐT/Zalo" class="sq-input" placeholder="Số điện thoại hoặc Zalo ID..." required>
+                        </div>
+                    </div>
+
+                    <!-- Q3: Kiểu đồ ngủ -->
+                    <div class="sq-block">
+                        <div class="sq-num">03</div>
+                        <div class="sq-content">
+                            <label class="sq-label">Bạn thường thích kiểu đồ ngủ gợi cảm nào nhất?</label>
+                            <p class="sq-hint">Ví dụ: ren mỏng, bodysuit, váy ngủ ngắn, 2 mảnh… · Có thể chọn nhiều</p>
+                            <div class="sq-chips">
+                                <label class="sq-chip"><input type="checkbox" name="Kiểu đồ ngủ" value="Ren mỏng xuyên thấu"><span>🕸 Ren mỏng</span></label>
+                                <label class="sq-chip"><input type="checkbox" name="Kiểu đồ ngủ" value="Bodysuit"><span>👙 Bodysuit</span></label>
+                                <label class="sq-chip"><input type="checkbox" name="Kiểu đồ ngủ" value="Váy ngủ ngắn"><span>👗 Váy ngủ ngắn</span></label>
+                                <label class="sq-chip"><input type="checkbox" name="Kiểu đồ ngủ" value="Set 2 mảnh"><span>🩴 Set 2 mảnh</span></label>
+                                <label class="sq-chip"><input type="checkbox" name="Kiểu đồ ngủ" value="Cosplay hoá trang"><span>🎭 Cosplay</span></label>
+                                <label class="sq-chip"><input type="checkbox" name="Kiểu đồ ngủ" value="Lụa / Satin"><span>✨ Lụa / Satin</span></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Q4: Dịp dùng -->
+                    <div class="sq-block">
+                        <div class="sq-num">04</div>
+                        <div class="sq-content">
+                            <label class="sq-label">Bạn muốn đồ ngủ dùng cho dịp nào chủ yếu?</label>
+                            <p class="sq-hint">Hẹn hò lãng mạn / đêm đặc biệt / thường xuyên ở nhà…</p>
+                            <div class="sq-chips">
+                                <label class="sq-chip"><input type="radio" name="Dịp dùng" value="Hẹn hò lãng mạn"><span>💕 Hẹn hò lãng mạn</span></label>
+                                <label class="sq-chip"><input type="radio" name="Dịp dùng" value="Đêm đặc biệt / kỷ niệm"><span>🌹 Đêm đặc biệt</span></label>
+                                <label class="sq-chip"><input type="radio" name="Dịp dùng" value="Bất ngờ cho chàng"><span>🎁 Bất ngờ cho chàng</span></label>
+                                <label class="sq-chip"><input type="radio" name="Dịp dùng" value="Thường xuyên ở nhà"><span>🏠 Thường xuyên ở nhà</span></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Q5: Cảm giác muốn có -->
+                    <div class="sq-block">
+                        <div class="sq-num">05</div>
+                        <div class="sq-content">
+                            <label class="sq-label">Bạn mong muốn đồ ngủ giúp tạo cảm giác thế nào?</label>
+                            <p class="sq-hint">Sexy quyến rũ / ngọt ngào + gợi cảm / tự tin hơn / nóng bỏng hơn…</p>
+                            <div class="sq-vibe-grid">
+                                <label class="sq-vibe"><input type="radio" name="Cảm giác" value="Sexy quyến rũ"><span>🔥</span><em>Sexy<br>quyến rũ</em></label>
+                                <label class="sq-vibe"><input type="radio" name="Cảm giác" value="Ngọt ngào + gợi cảm"><span>🍓</span><em>Ngọt ngào<br>+ gợi cảm</em></label>
+                                <label class="sq-vibe"><input type="radio" name="Cảm giác" value="Tự tin hơn"><span>💪</span><em>Tự tin<br>hơn</em></label>
+                                <label class="sq-vibe"><input type="radio" name="Cảm giác" value="Nóng bỏng khó cưỡng"><span>💋</span><em>Nóng bỏng<br>khó cưỡng</em></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sq-submit-row">
+                        <button type="submit" class="sq-submit" id="sqSubmitBtn">
+                            <span id="sqBtnText">🎁 Hoàn thành & Nhận Voucher 100K</span>
+                        </button>
+                        <p class="sq-lock">🔒 Thông tin bảo mật · Không spam</p>
+                    </div>
+                </form>
+
+                <!-- SUCCESS MESSAGE -->
+                <div id="surveySuccess" class="survey-success" style="display:none;">
+                    <div class="ss-icon">🎉</div>
+                    <h3>Cảm ơn bạn đã chia sẻ!</h3>
+                    <p>Umee Bra sẽ gửi voucher <strong>100K</strong> đến <strong id="sqSuccessName">bạn</strong> qua Zalo sớm nhất nhé~ 💕</p>
+                    <button onclick="closeSurvey()" class="sq-close-btn">Đóng lại ✕</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END SURVEY BANNER -->
+
         <div class="nav-links">
             <a href="#">SẢN PHẨM MỚI</a>
             <a href="#">COSPLAY GỢI CẢM</a>
@@ -184,7 +299,6 @@
             </div>
         </div>
     </section>
-
     <!-- FOOTER Pinned Pink Style -->
     <footer class="footer">
         <div class="f-col">
@@ -343,6 +457,134 @@
                 if(timerElement) timerElement.textContent = displayTime;
             }
         }, 1000);
+    </script>
+
+    <script>
+        // === SURVEY BANNER LOGIC ===
+        var surveyOpen = false;
+
+        function toggleSurvey() {
+            surveyOpen = !surveyOpen;
+            var body = document.getElementById('surveyBody');
+            var chevron = document.getElementById('surveyChevron');
+            var cta = document.getElementById('surveyCtaText');
+            var btn = document.getElementById('surveyToggleBtn');
+
+            if (surveyOpen) {
+                body.style.maxHeight = body.scrollHeight + 'px';
+                body.style.opacity = '1';
+                chevron.style.transform = 'rotate(180deg)';
+                cta.textContent = 'Thu gọn ↑';
+                btn.setAttribute('aria-expanded', 'true');
+                Btn_pulse_off();
+            } else {
+                body.style.maxHeight = '0';
+                body.style.opacity = '0';
+                chevron.style.transform = 'rotate(0deg)';
+                cta.textContent = 'Làm khảo sát ngay →';
+                btn.setAttribute('aria-expanded', 'false');
+            }
+        }
+
+        function closeSurvey() {
+            surveyOpen = true; // set to true so toggleSurvey closes it
+            toggleSurvey();
+        }
+
+        function Btn_pulse_off() {
+            var bar = document.getElementById('surveyToggleBtn');
+            bar.style.animation = 'none';
+        }
+
+        // Chip toggle
+        document.querySelectorAll('.sq-chip input').forEach(function(inp) {
+            inp.addEventListener('change', function() {
+                var chip = this.closest('.sq-chip');
+                if (this.type === 'checkbox') {
+                    chip.classList.toggle('sq-chip-active', this.checked);
+                } else { // radio
+                    var name = this.name;
+                    document.querySelectorAll('.sq-chip input[name="' + name + '"]').forEach(function(r) {
+                        r.closest('.sq-chip').classList.remove('sq-chip-active');
+                    });
+                    chip.classList.add('sq-chip-active');
+                }
+            });
+        });
+
+        // Vibe grid
+        document.querySelectorAll('.sq-vibe input').forEach(function(rb) {
+            rb.addEventListener('change', function() {
+                document.querySelectorAll('.sq-vibe').forEach(function(v) { v.classList.remove('sq-vibe-active'); });
+                this.closest('.sq-vibe').classList.add('sq-vibe-active');
+            });
+        });
+
+        // Survey form submit
+        var surveyForm = document.getElementById('surveyForm');
+        if (surveyForm) {
+            surveyForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // === CÀI ĐẶT: Sử dụng chung link với đơn hàng ===
+                const GOOGLE_SURVEY_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz74NYXiGz4MxcoY0pnPp8-QR7SYNb9YJSIwx1rB_fWh0Jv_Jw85YHnmocY-GZwdZdJOw/exec';
+                
+
+                var nameVal = document.getElementById('sq_name').value.trim();
+                var btn = document.getElementById('sqSubmitBtn');
+                var btnText = document.getElementById('sqBtnText');
+
+                btn.disabled = true;
+                btnText.textContent = 'Đang gửi...';
+
+                // Thu thập dữ liệu từ Form
+                var formData = new FormData(surveyForm);
+                var dataParams = new URLSearchParams();
+                
+                // Chuyển đổi dữ liệu sang định dạng mà Google Script dễ xử lý nhất
+                formData.forEach((value, key) => {
+                    // Xử lý các checkbox có cùng name (Kiểu đồ ngủ)
+                    if (dataParams.has(key)) {
+                        dataParams.set(key, dataParams.get(key) + ", " + value);
+                    } else {
+                        dataParams.append(key, value);
+                    }
+                });
+
+                fetch(GOOGLE_SURVEY_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors', // Dùng no-cors để tránh lỗi CORS khi gửi từ domain khác
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: dataParams.toString()
+                })
+                .then(function() {
+                    // no-cors luôn nhảy vào đây kể cả khi thành công
+                    showSurveySuccess(nameVal);
+                })
+                .catch(function(err) {
+                    console.error('Error:', err);
+                    alert('Có lỗi xảy ra, nàng hãy thử lại sau hoặc inbox Zalo shop nhé!');
+                    btn.disabled = false;
+                    btnText.textContent = '🎁 Hoàn thành & Nhận Voucher 100K';
+                });
+            });
+        }
+
+        function showSurveySuccess(name) {
+            var form = document.getElementById('surveyForm');
+            var success = document.getElementById('surveySuccess');
+            var sqName = document.getElementById('sqSuccessName');
+            if (form) form.style.display = 'none';
+            if (success) {
+                success.style.display = 'flex';
+                if (sqName) sqName.textContent = name || 'bạn';
+                // Re-measure height for smooth animation
+                var body = document.getElementById('surveyBody');
+                if (body) body.style.maxHeight = body.scrollHeight + 500 + 'px';
+            }
+        }
     </script>
     
     <!-- FLOATING CONTACT BUTTONS -->
